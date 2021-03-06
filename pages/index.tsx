@@ -1,15 +1,18 @@
-import Link from 'next/link'
 import Layout from '../components/Layout'
+import useSWR from 'swr'
 
-const IndexPage = () => (
-  <Layout title="三千神机 - SOHO之家">
-    <h1>三千神机</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+
+const IndexPage = () => {
+  
+  const { data, error } = useSWR('/api/user')
+
+  if (error) return <div>数据加载错误</div>
+  if (!data) return <div>正在加载...</div>
+  
+  return(
+    <Layout title="神迹网">
+      <h1>三千神机</h1>
+    </Layout>
+)}
 
 export default IndexPage

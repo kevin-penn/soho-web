@@ -7,7 +7,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = 'Small Office, Home Office' }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -17,22 +17,16 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <header>
       <nav>
         <Link href="/">
-          <a>Home</a>
+          <a>首页</a>
         </Link>{' '}
         |{' '}
         <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
+          <a>关于</a>
+        </Link>
       </nav>
     </header>
     {children}
     <footer>
-      <hr />
       <span>kevin.penn@outlook.com</span>
     </footer>
   </div>
